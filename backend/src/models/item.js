@@ -17,6 +17,10 @@ const itemSchema = mongoose.Schema({
         type: Number,
         required: true
     },
+    imagem: {
+        type: String,
+        required: true
+    },
 })
 
 module.exports = mongoose.model('iten', itemSchema) // 's' final
