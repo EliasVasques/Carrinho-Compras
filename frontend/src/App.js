@@ -5,15 +5,16 @@ import './index.css'
 
 import Item from './components/item/Item'
 import DetalhesItem from './components/detalhesItem/DetalhesItem'
+import Carrinho from './components/carrinho/Carrinho'
 
 const App = () => {
     const [itens, setItens] = useState([])
 
     const { detalhes } = useSelector((state) => state.paginas)
     const { loja } = useSelector((state) => state.paginas)
+    const { carrinho } = useSelector((state) => state.paginas)
     
     useEffect(() => {
-        console.log('oi')
         fetch('http://localhost:5000/api/itens/')
             .then((resposta) => resposta.json())
             .then((itens) => setItens(itens))
@@ -29,6 +30,9 @@ const App = () => {
         </div>
         { 
             detalhes && <DetalhesItem item={detalhes} />
+        }
+        { 
+            carrinho && <Carrinho item={carrinho} />
         }
     </div>
 }   

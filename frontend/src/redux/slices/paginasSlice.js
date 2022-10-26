@@ -14,10 +14,15 @@ export const paginasSlice = createSlice({
             state.detalhes = action.payload
             state.loja = false
             state.carrinho = false
+        },
+        mudarParaCarrinho: (state, action) => {
+            state.detalhes = false
+            state.loja = false
+            state.carrinho = true
         }
     }
 })
 
-export const { mudarParaDetalhes } = paginasSlice.actions
+export const { mudarParaDetalhes, mudarParaCarrinho } = paginasSlice.actions
 
 export default paginasSlice.reducer

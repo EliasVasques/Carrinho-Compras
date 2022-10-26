@@ -1,8 +1,9 @@
 import React from "react"
-import './index.css'
-
 import { useDispatch } from 'react-redux'
+
 import { mudarParaDetalhes } from "../../redux/slices/paginasSlice"
+
+import './index.css'
 
 const Item = ({ item }) => {
 

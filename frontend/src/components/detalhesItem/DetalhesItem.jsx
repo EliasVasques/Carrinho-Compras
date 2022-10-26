@@ -1,9 +1,14 @@
 import React from "react"
 import { useState } from "react"
+import { useDispatch } from 'react-redux'
+
+import { mudarParaCarrinho } from "../../redux/slices/paginasSlice"
 
 import './index.css'
 
 const DetalhesItem = ({ item }) => {
+
+    const dispatch = useDispatch()
 
     const [precoTotal, setPrecoTotal] = useState(item.preco)
 
@@ -28,7 +33,9 @@ const DetalhesItem = ({ item }) => {
                     </select> 
 
                 </div>
-                <div className="botao"><button>Adicionar ao carrinho</button></div>
+                <div className="botao">
+                    <button onClick={() => dispatch(mudarParaCarrinho())}>Adicionar ao carrinho</button>
+                </div>
             </div>
         </div>
     )
